@@ -1,10 +1,11 @@
 // components/ExpenseForm.js
-import  { useState } from 'react';
+import  { useContext, useState } from 'react';
+import { AppContext } from '../Hoocks/AppContext';
 
 const ExpenseForm = () => {
+  const { expenseList, setExpenseList } = useContext(AppContext);
   const [expense, setExpense] = useState('');
   const [description, setDescription] = useState('');
-  const [expenseList, setExpenseList] = useState([]);
 
   const handleExpenseChange = (e) => {
     setExpense(e.target.value);
