@@ -10,16 +10,19 @@ import Layout from './layout/Layout';
 import Home from './components/Home';
 
 const App = () => {
+  
   return (
     <Router>
        <AppProvider>
         <Layout>
           <Routes>
-            <Route path="/" Component={Home} />
+            <Route  path="/" Component={Home} />
             <Route path="/income" Component={IncomePage} />
             <Route path="/expense" Component={ExpensePage} />
           </Routes>
+
         </Layout>
+        
       </AppProvider>
     </Router>
   );

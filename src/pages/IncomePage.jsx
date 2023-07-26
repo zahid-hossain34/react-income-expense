@@ -3,8 +3,8 @@ import IncomeForm from '../components/IncomeForm';
 
 const IncomePage = () => {
   return (
-    <div className='income-home'>
-      <h1>Income Page</h1>
+    <div className=' flex justify-center items-center flex-col space-y-10 py-3'>
+      <h1 className='font-mono text-2xl'>Income Tracker </h1>
       <IncomeForm />
     </div>
   );

@@ -5,8 +5,11 @@ import  { createContext, useState } from 'react';
 const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
-  const [incomeList, setIncomeList] = useState([]);
-  const [expenseList, setExpenseList] = useState([]);
+  const getIncomeList = JSON.parse(localStorage.getItem("incomeList"));
+  const getExpenseList = JSON.parse(localStorage.getItem("expenseList"));
+  const [incomeList, setIncomeList] = useState(getIncomeList ? getIncomeList : []);
+  const [expenseList, setExpenseList] = useState(getExpenseList ? getExpenseList : []);
+
 
   return (
     <AppContext.Provider value={{ incomeList, setIncomeList, expenseList, setExpenseList }}>
